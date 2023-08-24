@@ -1,0 +1,53 @@
+ing System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.button1.Text = "red";
+            this.button2.Text = "Aqua";
+            this.label1.Text = "click to change color";
+            this.label2.Text = "click to change color";
+
+            this.radioButton1.Checked = true;
+           
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Text = "set back";
+         //   if(System.Drawing.BackColor=Color.Red)
+            button1.Visible = true;
+            button1.BackColor = Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.Red;
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.BackColor = Color.DarkGray;
+            this.BackColor = System.Drawing.Color.Aqua;
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+}
