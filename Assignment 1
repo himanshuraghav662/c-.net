@@ -1,0 +1,75 @@
+using System;
+using System.Windows.Forms;
+
+namespace HobbySelector
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void ShowHobbyButton_Click(object sender, EventArgs e)
+        {
+            string[] hobbies = new string[5] { "cricket", "tv watching", "riding", "touring", "swimming" };
+            int selectedCount = 0;
+            string selectedHobbies = "";
+
+            if (CricketCheckBox.Checked)
+            {
+                selectedCount++;
+                selectedHobbies += "cricket";
+            }
+            if (TvWatchingCheckBox.Checked)
+            {
+                if (selectedCount > 0)
+                {
+                    selectedHobbies += " and ";
+                }
+                selectedCount++;
+                selectedHobbies += "tv watching";
+            }
+            if (RidingCheckBox.Checked)
+            {
+                if (selectedCount > 0)
+                {
+                    selectedHobbies += ", ";
+                }
+                selectedCount++;
+                selectedHobbies += "riding";
+            }
+            if (TouringCheckBox.Checked)
+            {
+                if (selectedCount > 0)
+                {
+                    selectedHobbies += ", ";
+                }
+                selectedCount++;
+                selectedHobbies += "touring";
+            }
+            if (SwimmingCheckBox.Checked)
+            {
+                if (selectedCount > 0)
+                {
+                    selectedHobbies += ", ";
+                }
+                selectedCount++;
+                selectedHobbies += "swimming";
+            }
+
+            if (selectedCount == 0)
+            {
+                MessageBox.Show("You have no hobby");
+            }
+            else if (selectedCount == 1)
+            {
+                MessageBox.Show("Your hobby is " + selectedHobbies);
+            }
+            else
+            {
+                MessageBox.Show("Your hobbies are " + selectedHobbies);
+            }
+        }
+    }
+}
