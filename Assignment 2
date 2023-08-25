@@ -1,0 +1,57 @@
+using System;
+using System.Windows.Forms;
+
+namespace HobbySelector
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void ShowMessageButton_Click(object sender, EventArgs e)
+        {
+            string name = NameTextBox.Text;
+            string fatherName = FatherNameTextBox.Text;
+            string city = CityTextBox.Text;
+            string nationality = NationalityTextBox.Text;
+
+            string hobbies = "";
+            if (RidingCheckBox.Checked)
+            {
+                hobbies += "riding, ";
+            }
+            if (WatchingTvCheckBox.Checked)
+            {
+                hobbies += "watching TV, ";
+            }
+            if (CricketCheckBox.Checked)
+            {
+                hobbies += "cricket, ";
+            }
+            if (ReadingCheckBox.Checked)
+            {
+                hobbies += "reading, ";
+            }
+            if (SwimmingCheckBox.Checked)
+            {
+                hobbies += "swimming, ";
+            }
+
+            if (hobbies.Length > 0)
+            {
+                hobbies = hobbies.Substring(0, hobbies.Length - 2);
+                hobbies = " and your hobbies are: " + hobbies;
+            }
+            else
+            {
+                hobbies = " and you have no hobby";
+            }
+
+            string message = "Hello " + name + " s/o Mr. " + fatherName + " R/o " + city + ", you are an " + nationality + hobbies;
+
+            MessageBox.Show(message);
+        }
+    }
+}
